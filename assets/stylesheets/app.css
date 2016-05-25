@@ -1,7 +1,7 @@
-body {
+/*body {
 	background: #232830;
 	margin: 20px;
-}
+}*/
 
 .borders {
 	display: flex;
@@ -47,4 +47,22 @@ body {
 .borders:hover .stripe {
 	transition: left 3s cubic-bezier(1, 0.3, 0.3, 1);
 	left: 315px;
-};
+}
+
+.container {
+	background: white;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	align-items: center;
+	-webkit-align-items: center;
+	-webkit-justify-content:
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.list {
+	border-bottom: 1px solid black;
+	margin: 10px 0;
+}
