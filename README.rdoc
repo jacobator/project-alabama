@@ -1,0 +1,6 @@
+== Startup
+gem install bundler
+bundle
+cp config/database.yml_example config/database.yml
+rake db:create db:migrate
+rails s
