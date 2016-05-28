@@ -10,14 +10,14 @@
       function indexResourceListController(resourceListFactory) {
         var vm = this;
         var limit = 10;
-        vm.newListUrl = newListUrl;
+        vm.showListUrl = showListUrl;
 
         resourceListFactory.query().$promise.then(function(data) {
           vm.lists = data.splice(0, limit);
         });
 
-        function newListUrl(list) {
-          return "/lists/" + list.id;
+        function showListUrl(list) {
+          return "#/lists/" + list.id;
         }
 
       }

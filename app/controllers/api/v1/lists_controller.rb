@@ -1,4 +1,4 @@
-class Api::V1::ListsController < ApplicationController
+class Api::V1::ListsController < Api::V1::BaseController
   before_action :set_list, only: [:show, :update, :destroy]
 
   # GET /lists
@@ -52,6 +52,6 @@ class Api::V1::ListsController < ApplicationController
     end
 
     def list_params
-      params.require(:list).permit(:name, :description)
+      params.permit(:name, :description)
     end
 end

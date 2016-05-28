@@ -12,7 +12,6 @@
     vm.list = {};
 
     vm.save = function(list) {
-      console.log(list);
       vm.list = {};
     }
   }

@@ -11,37 +11,6 @@
  * file per style scope.
  *
  *= require normalize-rails
+ *= require font-awesome
  *= require_tree .
- *= require_self
  */
-
- html, body { height: 100%; width: 100%; margin: 0; }.
-
- body {
-   padding-top: 20vh;
- }
-
- .container {
-   display: flex;
-   flex-direction: column;
- }
-
- .row {
-   margin: auto;
- }
-
- a {
-   text-decoration: none;
- }
-
- .item {
-   border-bottom: 1px solid black;
-   padding-top: 5vh;
-   padding-bottom: 5vh;
-   text-align: center;
-   width: 30vw;
- }
-
- .item:hover {
-   background-color: #e7fef9;
- }

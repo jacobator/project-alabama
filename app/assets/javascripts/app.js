@@ -8,16 +8,22 @@
 		.when("/",
 				{
 					templateUrl: "lists/index.html",
-					// controller: "indexListController",
 					controller: "indexResourceListController",
-					controllerAs: "indexListController"
+					controllerAs: "indexResourceListController"
 				}
 		)
-		.when("/lists/:list_id",
+		.when("/lists/:id",
 				{
 					templateUrl: "lists/show.html",
 					controller: "showListController",
 					controllerAs: "showListController"
+				}
+		)
+		.when("/lists/:id/edit",
+				{
+					templateUrl: "lists/edit.html",
+					controller: "editListController",
+					controllerAs: "editListController"
 				}
 		)
 		.when("/lists/new",
@@ -27,12 +33,6 @@
 					controllerAs: "newListController"
 				}
 		)
-	});
-
-	app.controller('AppCtrl', function() {
-		console.log('AppCtrl');
-		var self = this;
-		self.message = "Hello FROM Hell";
 	});
 
 })();

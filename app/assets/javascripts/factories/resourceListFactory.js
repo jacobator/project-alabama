@@ -8,7 +8,11 @@
 
 
   	function resourceListFactory($resource) {
-      return $resource('/api/v1/lists');
+      return $resource('/api/v1/lists/:id', null,
+        {
+              'update': { method:'PUT' }
+
+        });
   	}
 
 })();

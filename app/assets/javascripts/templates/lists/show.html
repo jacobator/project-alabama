@@ -1,1 +1,18 @@
-{{1 + 2}}
+<div class="row row-right">
+  <a href="#" ng-href="#/lists/{{showListController.list.id}}/edit">
+  <!-- <a href="#" ng-href="{{showListController.editListUrl(showListController.list)}}"> -->
+    <i class="action-icon fa fa-pencil" aria-hidden="true"></i>
+  </a>
+</div>
+
+<div class="row">
+  <div class="item item-active">
+    <span>{{showListController.list.name}}</span>
+  </div>
+</div>
+
+<div class="row row-right">
+  <a confirm-action="showListController.deleteList(showListController.list)"  confirm-dialog="Are you sure you want to delete this beatiful list ?">
+    <i class="action-icon fa fa-trash-o" aria-hidden="true"></i>
+  </a>
+</div>

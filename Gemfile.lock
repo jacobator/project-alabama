@@ -44,6 +44,8 @@ GEM
       sprockets (~> 3.0)
       tilt
     arel (6.0.3)
+    autoprefixer-rails (6.3.6.1)
+      execjs
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -120,6 +122,7 @@ GEM
       rails-assets-angular (= 1.5.5)
     rails-assets-angular-route (1.5.5)
       rails-assets-angular (= 1.5.5)
+    rails-assets-font-awesome (4.6.3)
     rails-assets-ng-resource (0.0.2)
       rails-assets-angular
       rails-assets-angular-mocks
@@ -178,6 +181,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.8.3)
   angular-rails-templates
+  autoprefixer-rails
   coffee-rails (~> 4.1.0)
   jquery-rails
   normalize-rails
@@ -188,6 +192,7 @@ DEPENDENCIES
   rails-assets-angular (= 1.5.5)
   rails-assets-angular-material
   rails-assets-angular-route
+  rails-assets-font-awesome
   rails-assets-ng-resource
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

@@ -22,7 +22,7 @@
     }
 
     function newListUrl(list) {
-      return "/lists/" + list.id;
+      return "#/lists/" + list.id;
     }
 
   }

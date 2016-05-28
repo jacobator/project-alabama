@@ -1,13 +1,33 @@
 (function() {
   'use strict';
+  
   angular
     .module('projectAlabama')
       .controller('showListController', showListController);
 
-  showListController.$inject = ['ListsFactory'];
+  showListController.$inject = ['resourceListFactory', '$routeParams', '$location'];
 
-  function showListController(list) {
+  function showListController(resourceListFactory, $routeParams, $location) {
     var vm = this;
-    console.log(list);
+
+    vm.deleteList = deleteList;
+    vm.editListUrl = editListUrl;
+
+    resourceListFactory.get({id: $routeParams.id}).$promise.then(function(data) {
+      vm.list = data;
+    }, function() {
+      $location.path('/');
+    });;
+
+    function deleteList(list) {
+      resourceListFactory.delete({id: list.id}).$promise.then(function(data) {
+        $location.path('/');
+      });;
+    }
+
+    function editListUrl(list) {
+      return "#/lists/" + list.id + '/edit';
+    }
+
   }
 })();
