@@ -3,9 +3,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
   root 'application#index'
-  resources :lists
-  # get '*pages', to: 'application#index'
+
+  namespace :api, format: :json do
+    namespace :v1 do
+      resources :lists, except: [:new, :edit]
+    end
+  end
+
+  get '*pages', to: 'application#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

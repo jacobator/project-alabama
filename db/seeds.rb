@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Creating list"
+10.times do
+  List.create(name: "List #{List.count + 1}", description: "blah-blah")
+end
+puts "Done"
