@@ -8,10 +8,17 @@
 		.when("/",
 				{
 					templateUrl: "lists/index.html",
-					controller: "indexResourceListController",
-					controllerAs: "indexResourceListController"
+					controller: "indexListController",
+					controllerAs: "indexListController"
 				}
 		)
+		.when("/lists/new",
+				{
+					templateUrl: "lists/new.html",
+					controller: "newListController",
+					controllerAs: "newListController"
+				}
+		)		
 		.when("/lists/:id",
 				{
 					templateUrl: "lists/show.html",
@@ -24,13 +31,6 @@
 					templateUrl: "lists/edit.html",
 					controller: "editListController",
 					controllerAs: "editListController"
-				}
-		)
-		.when("/lists/new",
-				{
-					templateUrl: "lists/new.html",
-					controller: "newListController",
-					controllerAs: "newListController"
 				}
 		)
 	});

@@ -4,15 +4,17 @@
     .module('projectAlabama')
       .controller('newListController', newListController);
 
-  newListController.$inject = ['ListsFactory'];
+  newListController.$inject = ['resourceListFactory', '$location'];
 
-  function newListController(ListsFactory) {
+  function newListController(resourceListFactory, $location) {
     var vm = this;
 
     vm.list = {};
 
     vm.save = function(list) {
-      vm.list = {};
-    }
+      var newList = new resourceListFactory(list);
+      newList.$save();
+      $location.path('/');
+    };
   }
 })();

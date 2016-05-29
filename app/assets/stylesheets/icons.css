@@ -8,3 +8,9 @@
 .action-icon {
   font-size: 2em;
 }
+
+.add-btn {
+  position: fixed;
+  right: 5vw;
+  top: 5vw;
+}

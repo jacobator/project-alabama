@@ -1,7 +1,11 @@
-<div class="row" ng-repeat="list in indexResourceListController.lists">
-  <a href="#" ng-href="{{indexResourceListController.showListUrl(list)}}">
+<div class="row" ng-repeat="list in indexListController.lists">
+  <a href="#" ng-href="{{indexListController.showListUrl(list)}}">
     <div class="item">
       <span>{{list.name}}</span>
     </div>
   </a>
 </div>
+
+<a href="#/lists/new">
+  <i class="action-icon add-btn fa fa-plus" aria-hidden="true"></i>
+</a>

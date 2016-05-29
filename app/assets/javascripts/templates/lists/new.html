@@ -1,5 +1,15 @@
-<h2>New list</h2>
-<form name="new-list" novalidate ng-submit="newListController.save(list)">
-  <input type="text" name="name"/ ng-model="newListController.list.name" required>
-  <input type="submit">
-</form>
+<div class="row row-right">
+  <a href="/#/">
+    <i class="action-icon fa fa-home" aria-hidden="true"></i>
+  </a>
+
+</div>
+
+<div class="row">
+  <div class="item item-active">
+    <form name="new-list" novalidate ng-submit="newListController.save(newListController.list)">
+      <input type="text" name="name"/ ng-model="newListController.list.name" required placeholder="Create new list">
+      <input type="submit">
+    </form>
+  </div>
+</div>

@@ -4,7 +4,7 @@ class Api::V1::ListsController < Api::V1::BaseController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.all
+    @lists = List.order(created_at: :desc)
 
     render json: ActiveModel::ArraySerializer.new(@lists)
   end
@@ -21,7 +21,7 @@ class Api::V1::ListsController < Api::V1::BaseController
     @list = List.new(list_params)
 
     if @list.save
-      render json: @list, status: :created, location: @list
+      render json: @list, status: :created
     else
       render json: @list.errors, status: :unprocessable_entity
     end
