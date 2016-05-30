@@ -3,7 +3,6 @@
    padding-top: 5vh;
    padding-bottom: 5vh;
    text-align: center;
-   width: 30vw;
 }
 
 .item-active {
@@ -12,4 +11,8 @@
 
 a .item:hover {
  background-color: #e7fef9;
+}
+
+.text-right {
+  text-align: right;
 }
