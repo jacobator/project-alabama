@@ -11,7 +11,20 @@
 
 <div class="row">
   <div class="item item-active">
-    <span>{{showListController.list.name}}</span>
+    <span class="list-name">{{showListController.list.name}}</span>
+    <div class="checklist">
+      <div class="new-checklist-item">
+        <form novalidate>
+          <input ng-keyup="$event.keyCode == 13 && showListController.createItem()" ng-model="showListController.newListItem.name" requuired type="text" placeholder="Press enter to add item"/>
+          <!-- <input on-press-enter="showListController.createItem()" ng-model="showListController.newItem.name" requuired type="text" placeholder="Press enter to add item"/> -->
+        </form>
+      </div>
+
+      <div class="checklist-item" ng-repeat="listItem in showListController.listItems">
+        <input type="checkbox"/>
+        <label>{{listItem.name}}</label>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -11,13 +11,16 @@
         var vm = this;
         var limit = 10;
         vm.showListUrl = showListUrl;
-
-        resourceListFactory.query().$promise.then(function(data) {
-          vm.lists = data.splice(0, limit);
-        });
+        loadLists();
 
         function showListUrl(list) {
           return "#/lists/" + list.id;
+        }
+
+        function loadLists() {
+          resourceListFactory.query().$promise.then(function(data) {
+            vm.lists = data.splice(0, limit);
+          });
         }
 
       }

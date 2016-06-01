@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   namespace :api, format: :json do
     namespace :v1 do
-      resources :lists, except: [:new, :edit]
+      resources :lists, except: [:new, :edit] do
+        resources :items, except: [:new, :edit]
+        resources :list_items, except: [:new, :edit]
+      end
     end
   end
 
