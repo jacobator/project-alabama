@@ -21,8 +21,10 @@
       </div>
 
       <div class="checklist-item" ng-repeat="listItem in showListController.listItems" ng-class="{completed: listItem.completed}">
-        <input type="checkbox" ng-checked="listItem.completed"/>
-        <label>{{listItem.name}}</label>
+        <!-- <a href ng-click="showListController.toggleListItem(listItem)"> -->
+          <input type="checkbox" ng-checked="listItem.completed"/>
+          <span ng-bind="listItem.name"></span>
+        <!-- </a> -->
       </div>
     </div>
   </div>

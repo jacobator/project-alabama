@@ -19,7 +19,7 @@
 
     vm.createItem = createItem;
     vm.listItems = [];
-    // vm.updateListItem = updateListItem;
+    vm.toggleListItem = toggleListItem;
 
     function loadList(listId) {
       resourceListFactory.get({id: listId}).$promise.then(function(data) {
@@ -55,9 +55,16 @@
       });
     }
 
-    // function updateListItem(listId) {
-    //
-    // }
+    function toggleListItem(listItem) {
+      console.log(listItem);
+      // var listItemData = {};
+      // listItemData.id = listItem.id
+      // listItemData.completed = true
+      // listItemFactory.update({list_id: vm.list_id, id: $routeParams.id}, updatedList).$promise.then(function(data) {
+      //
+      // }, function() {
+      // });;
+    }
 
   }
 })();
