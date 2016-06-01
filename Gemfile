@@ -50,3 +50,6 @@ gem 'normalize-rails'
 gem 'rails-assets-font-awesome'
 gem 'rails-assets-angular-material'
 gem 'autoprefixer-rails'
+
+gem 'rails_12factor', group: :production
+ruby "2.3.1"
