@@ -1,3 +1,4 @@
+<!-- TODO: list-item instead of row -->
 <div class="row" ng-repeat="list in indexListController.lists">
   <a href="#" ng-href="{{indexListController.showListUrl(list)}}">
     <div class="item">
@@ -7,5 +8,6 @@
 </div>
 
 <a href="#/lists/new">
-  <i class="action-icon fixed-btn fa fa-plus" aria-hidden="true"></i>
+  <!-- TODO: plus should be in the corner of list -->
+  <i class="action-icon fixed-btn fa fa-plus"></i>
 </a>

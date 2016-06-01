@@ -11,6 +11,10 @@
 
     vm.list = {};
 
+    // TODO: do like this
+    // vm.save = save
+    // function save()
+
     vm.save = function(list) {
       var newList = new resourceListFactory(list);
       newList.$save();

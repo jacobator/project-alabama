@@ -1,24 +1,22 @@
-<div class="row row-right">
+<div class="row ">
   <a href="/#/">
-    <i class="action-icon fa fa-home" aria-hidden="true"></i>
+    <i class="action-icon fa fa-home"></i>
   </a>
 
   <a href="#" ng-href="#/lists/{{editListController.list.id}}">
-    <i class="action-icon fa fa-arrow-left" aria-hidden="true"></i>
+    <i class="action-icon fa fa-arrow-left"></i>
   </a>
 </div>
 
 <div class="row">
+  
   <div class="item item-active">
-    <form novalidate>
-      <input ng-model="editListController.list.name" required/>
-    </form>
-
+    <input ng-model="editListController.list.name"/>
   </div>
 </div>
 
 <div class="row text-right">
   <a href ng-click="editListController.update(editListController.list)">
-    <i class="action-icon fa fa-check" aria-hidden="true"></i>
+    <i class="action-icon fa fa-check"></i>
   </a>
 </div>

@@ -8,12 +8,8 @@
   showListController.$inject = ['resourceListFactory', 'listItemFactory', '$routeParams', '$location'];
 
   function showListController(resourceListFactory, listItemFactory, $routeParams, $location) {
-    var listId = $routeParams.id;
-
-    loadList(listId);
-    loadListItems(listId);
-
     var vm = this;
+    var listId = $routeParams.id;
     vm.deleteList = deleteList;
     vm.editListUrl = editListUrl;
 
@@ -21,10 +17,14 @@
     vm.listItems = [];
     vm.toggleListItem = toggleListItem;
 
+    loadList(listId);
+    loadListItems(listId);
+
     function loadList(listId) {
       resourceListFactory.get({id: listId}).$promise.then(function(data) {
         vm.list = data;
       }, function() {
+        // TODO: extract to factory
         $location.path('/');
       });
     }
@@ -40,7 +40,8 @@
     }
 
     function createItem() {
-      var newListItem = new listItemFactory({ list_id: vm.list.id });
+      var newListItem = new listItemFactory({ list_id: listId });
+      // TODO: pass newListItem into function as argument
       newListItem.list_item = vm.newListItem;
       newListItem.$save();
       vm.newListItem = {};

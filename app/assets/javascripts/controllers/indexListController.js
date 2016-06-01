@@ -9,6 +9,7 @@
 
       function indexListController(resourceListFactory) {
         var vm = this;
+        // TODO: pass limit as parameter -->
         var limit = 10;
         vm.showListUrl = showListUrl;
         loadLists();
@@ -18,9 +19,9 @@
         }
 
         function loadLists() {
-          resourceListFactory.query().$promise.then(function(data) {
-            vm.lists = data.splice(0, limit);
-          });
+          // TODO: use service
+          // TODO: do not slice here
+          vm.lists = resourceListFactory.query();
         }
 
       }
