@@ -1,5 +1,5 @@
 class ListItemSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :completed
 
   def name
     object.item.name

@@ -20,8 +20,8 @@
         </form>
       </div>
 
-      <div class="checklist-item" ng-repeat="listItem in showListController.listItems">
-        <input type="checkbox"/>
+      <div class="checklist-item" ng-repeat="listItem in showListController.listItems" ng-class="{completed: listItem.completed}">
+        <input type="checkbox" ng-checked="listItem.completed"/>
         <label>{{listItem.name}}</label>
       </div>
     </div>

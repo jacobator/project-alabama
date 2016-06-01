@@ -92,3 +92,7 @@ a .item:hover {
   right: 10px;
   bottom: 10px;
 }
+
+.completed {
+  text-decoration: line-through;
+}

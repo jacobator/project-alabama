@@ -66,6 +66,6 @@ class Api::V1::ListItemsController < Api::V1::BaseController
     end
 
     def list_item_params
-      params.require(:list_item).permit(:item_id, :list_id)
+      params.require(:list_item).permit(:item_id, :list_id, :completed)
     end
 end

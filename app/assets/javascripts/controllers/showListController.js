@@ -19,6 +19,7 @@
 
     vm.createItem = createItem;
     vm.listItems = [];
+    // vm.updateListItem = updateListItem;
 
     function loadList(listId) {
       resourceListFactory.get({id: listId}).$promise.then(function(data) {
@@ -53,6 +54,10 @@
         $location.path('/');
       });
     }
+
+    // function updateListItem(listId) {
+    //
+    // }
 
   }
 })();
