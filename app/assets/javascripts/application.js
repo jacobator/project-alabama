@@ -10,8 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// require angular
-// require ng-resource
+//= require angular
+//= require angular-resource
 //= require angular-route
 //= require angular-rails-templates
 // require angular-material
