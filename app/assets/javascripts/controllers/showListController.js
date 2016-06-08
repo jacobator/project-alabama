@@ -12,10 +12,14 @@
     var listId = $routeParams.id;
     vm.deleteList = deleteList;
     vm.editListUrl = editListUrl;
+    vm.search = initSearch();
 
     vm.createItem = createItem;
     vm.listItems = [];
+    vm.deleteListItem = deleteListItem;
     vm.toggleListItem = toggleListItem;
+    vm.filter = filter;
+    vm.filterValue = 'pending';
 
     loadList(listId);
     loadListItems(listId);
@@ -32,7 +36,7 @@
     function deleteList(list) {
       resourceListFactory.delete({id: list.id}).$promise.then(function(data) {
         $location.path('/');
-      });;
+      });
     }
 
     function editListUrl(list) {
@@ -56,15 +60,36 @@
       });
     }
 
+    function deleteListItem(listItem) {
+      listItemFactory.delete({list_id: listId, id: listItem.id}).$promise.then(function(data) {
+        vm.listItems.find(function(scopeListItem, index, array) {
+          if(scopeListItem.id === listItem.id) {
+            return vm.listItems.splice(index, 1);
+          }
+        });
+      });
+    }
+
     function toggleListItem(listItem) {
-      console.log(listItem);
-      // var listItemData = {};
-      // listItemData.id = listItem.id
-      // listItemData.completed = true
-      // listItemFactory.update({list_id: vm.list_id, id: $routeParams.id}, updatedList).$promise.then(function(data) {
-      //
-      // }, function() {
-      // });;
+      listItem.completed = !listItem.completed;
+      listItemFactory.update({id: listItem.id, list_id: listId}, {list_item: listItem}).$promise.then(function(data) {
+      });
+    }
+
+    function initSearch() {
+      return {completed: false};
+    }
+
+    function filter(todo) {
+      if (vm.filterValue === "all") {
+          return true;
+      } else if(todo.completed && vm.filterValue === "completed"){
+          return true;
+      } else if(!todo.completed && vm.filterValue === "pending"){
+          return true;
+      } else{
+          return false;
+      }
     }
 
   }

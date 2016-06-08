@@ -22,18 +22,31 @@
         <!-- <input on-press-enter="showListController.createItem()" ng-model="showListController.newItem.name" requuired type="text" placeholder="Press enter to add item"/> -->
       </div>
 
-      <div class="checklist-item" ng-repeat="listItem in showListController.listItems" ng-class="{completed: listItem.completed}">
-        <!-- <a href ng-click="showListController.toggleListItem(listItem)"> -->
+      <div class="checklist-item" ng-repeat="listItem in showListController.listItems | filter:showListController.filter" ng-class="{completed: listItem.completed}">
+        <a href ng-click="showListController.toggleListItem(listItem)">
           <input type="checkbox" ng-checked="listItem.completed"/>
           <span ng-bind="listItem.name"></span>
+        </a>
+          <a href confirm-action="showListController.deleteListItem(listItem)"  confirm-dialog="Are you sure you want to delete this beatiful item ?">
+            <i class="fa fa-trash-o"></i>
+          </a>
         <!-- </a> -->
       </div>
+      <a href ng-click="showListController.filterValue='all'" class="pa-filter" ng-class="{'active': showListController.filterValue == 'all'}"/>
+        All
+      </a>
+      <a href ng-click="showListController.filterValue='completed'"class="pa-filter" ng-class="{'active': showListController.filterValue == 'completed'}">
+        Completed
+      </a>
+      <a href ng-click="showListController.filterValue='pending'"class="pa-filter" ng-class="{'active': showListController.filterValue == 'pending'}"/>
+        Pending
+      </a>
     </div>
   </div>
 </div>
 
 <div class="row text-right">
-  <a href="#" confirm-action="showListController.deleteList(showListController.list)"  confirm-dialog="Are you sure you want to delete this beatiful list ?">
+  <a href confirm-action="showListController.deleteList(showListController.list)"  confirm-dialog="Are you sure you want to delete this beatiful list ?">
     <i class="action-icon fa fa-trash-o"></i>
   </a>
 </div>

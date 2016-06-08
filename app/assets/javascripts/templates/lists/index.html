@@ -1,5 +1,6 @@
+<input placeholder="search" ng-model="search"/>
 <!-- TODO: list-item instead of row -->
-<div class="row" ng-repeat="list in indexListController.lists">
+<div class="row" ng-repeat="list in indexListController.lists | filter:search">
   <a href="#" ng-href="{{indexListController.showListUrl(list)}}">
     <div class="item">
       <span>{{list.name}}</span>
