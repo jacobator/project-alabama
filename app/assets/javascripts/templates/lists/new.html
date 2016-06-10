@@ -1,16 +1,13 @@
-<div class="row ">
+<div class="top-actions">
   <a href="/#/">
     <i class="action-icon fa fa-home"></i>
   </a>
 
 </div>
 
-<div class="row">
-  <div class="item item-active">
-    <!--  TODO: check if form is valid then submit -->
-    <form name="new-list" novalidate ng-submit="newListController.save(newListController.list)">
-      <input type="text" name="name" ng-model="newListController.list.name" required placeholder="Enter list name">
-      <input type="submit">
-    </form>
-  </div>
+<div class="list-item">
+  <form name="newList" novalidate ng-submit="newListController.save(newListController.list)">
+    <input type="text" name="name" ng-model="newListController.list.name" required placeholder="Enter list name">
+    <input type="submit" ng-disabled="newList.$invalid">
+  </form>
 </div>

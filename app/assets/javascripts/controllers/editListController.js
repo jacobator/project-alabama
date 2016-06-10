@@ -17,13 +17,13 @@
       vm.list = data;
     }, function() {
       $location.path('/');
-    });;
+    });
 
     function update(updatedList) {
       resourceListFactory.update({id: $routeParams.id}, updatedList).$promise.then(function(data) {
         vm.list = data;
         $location.path('/lists/' + $routeParams.id);
-      });;
+      });
     }
 
   }

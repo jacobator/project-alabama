@@ -1,28 +1,26 @@
-    (function() {
-      'use strict';
-      angular
-        .module('projectAlabama')
-          .controller('indexListController', indexListController);
+(function() {
+  'use strict';
+  angular
+    .module('projectAlabama')
+      .controller('indexListController', indexListController);
 
-      indexListController.$inject = ['resourceListFactory'];
+  indexListController.$inject = ['resourceListFactory'];
 
+  function indexListController(resourceListFactory) {
+    // TODO: extract to config object
+    var LIMIT = 10;
+    var vm = this;
+    vm.showListUrl = showListUrl;
+    loadLists();
 
-      function indexListController(resourceListFactory) {
-        var vm = this;
-        // TODO: pass limit as parameter -->
-        var limit = 10;
-        vm.showListUrl = showListUrl;
-        loadLists();
+    function showListUrl(list) {
+      return "#/lists/" + list.id;
+    }
 
-        function showListUrl(list) {
-          return "#/lists/" + list.id;
-        }
+    function loadLists() {
+      vm.lists = resourceListFactory.query({limit: LIMIT});
+      // vm.lists = resourceListFactory.getLists({limit: LIMIT});
+    }
 
-        function loadLists() {
-          // TODO: use service
-          // TODO: do not slice here
-          vm.lists = resourceListFactory.query();
-        }
-
-      }
-    })();
+  }
+})();

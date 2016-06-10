@@ -10,15 +10,12 @@
     var vm = this;
 
     vm.list = {};
+    vm.save = save;
 
-    // TODO: do like this
-    // vm.save = save
-    // function save()
-
-    vm.save = function(list) {
+    function save(list) {
       var newList = new resourceListFactory(list);
       newList.$save();
       $location.path('/');
-    };
+    }
   }
 })();

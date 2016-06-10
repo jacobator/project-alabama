@@ -4,7 +4,7 @@ class Api::V1::ListsController < Api::V1::BaseController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.order(created_at: :desc)
+    @lists = List.order(created_at: :desc).limit(params[:limit] || 10)
 
     render json: ActiveModel::ArraySerializer.new(@lists)
   end
