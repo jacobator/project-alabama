@@ -12,7 +12,7 @@ function onPressEnter() {
   return {
     restrict: 'A',
     link: {
-      function(scope, element, attrs) {
+      function( scope, element, attrs) {
         element.bind("keydown keypress", function(event) {
           console.log(event);
           if(event.which === 13) {

@@ -2,10 +2,6 @@
 
 html, body { height: 100%; width: 100%; margin: 0; };
 
-body {
-  padding-top: 20vh;
-}
-
 .pa-filter.active{
   border: 1px solid black;
   border-radius: 5px;
@@ -30,20 +26,27 @@ ul li {
 
 /*  */
 
-.item {
+.list-item {
    border-bottom: 1px solid black;
    padding-top: 5vh;
    padding-bottom: 5vh;
    text-align: center;
 }
 
-// TODO: remove. incorrect naming and usage
-.item-active {
-  border-top: 1px solid black;
+.top-actions {
+  border-bottom: 1px solid black;
 }
 
-a .item:hover {
+.list-item .list-name {
+  display: block;
+}
+
+.list-item:hover {
  background-color: #e7fef9;
+}
+
+.list-item a {
+  width: 100%;
 }
 
 .text-right {
@@ -60,7 +63,6 @@ a .item:hover {
   border-color: red;
   color: red;
 }
-
 .ng-invalid input:focus {
   border-color: red;
 }*/
@@ -101,6 +103,13 @@ a .item:hover {
   position: fixed;
   right: 10px;
   bottom: 10px;
+}
+
+@media all and (min-width: 980px) {
+  .fixed-btn {
+    right: 15%;
+    bottom: 50%;
+  }
 }
 
 .completed {

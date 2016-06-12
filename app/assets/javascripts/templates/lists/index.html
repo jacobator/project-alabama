@@ -1,14 +1,10 @@
-<input placeholder="search" ng-model="search"/>
-<!-- TODO: list-item instead of row -->
-<div class="row" ng-repeat="list in indexListController.lists | filter:search">
+<div class="list-item" ng-repeat="list in indexListController.lists">
   <a href="#" ng-href="{{indexListController.showListUrl(list)}}">
-    <div class="item">
-      <span>{{list.name}}</span>
-    </div>
+    <!-- TODO: hover area is not covering whole block  -->
+    <span class="list-name">{{list.name}}</span>
   </a>
 </div>
 
 <a href="#/lists/new">
-  <!-- TODO: plus should be in the corner of list -->
   <i class="action-icon fixed-btn fa fa-plus"></i>
 </a>

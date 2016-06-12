@@ -1,4 +1,4 @@
-<div class="row ">
+<div class="top-actions">
   <a href="/#/">
     <i class="action-icon fa fa-home"></i>
   </a>
@@ -8,14 +8,13 @@
   </a>
 </div>
 
-<div class="row">
-  
-  <div class="item item-active">
+<div class="list-item">
+  <form name="editList">
     <input ng-model="editListController.list.name"/>
-  </div>
+  </form>
 </div>
 
-<div class="row text-right">
+<div class="bottom-actions text-right">
   <a href ng-click="editListController.update(editListController.list)">
     <i class="action-icon fa fa-check"></i>
   </a>

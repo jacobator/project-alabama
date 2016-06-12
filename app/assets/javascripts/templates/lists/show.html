@@ -1,23 +1,20 @@
-<div class="row ">
+<div class="top-actions">
   <a href="/#/">
     <i class="action-icon fa fa-home"></i>
   </a>
 
   <a href="#" ng-href="#/lists/{{showListController.list.id}}/edit">
-  <!-- <a href="#" ng-href="{{showListController.editListUrl(showListController.list)}}"> -->
     <i class="action-icon fa fa-pencil"></i>
   </a>
 </div>
 
-<!-- remove row -->
-<div class="row">
+<div class="list-item">
   <!-- TODO: add list item to list_items list, then perform request -->
   <div class="item item-active">
     <span class="list-name">{{showListController.list.name}}</span>
     <div class="checklist">
       <div class="new-checklist-item">
         <!-- TODO: extract logic to directive or controller -->
-        <!-- TODO:  -->
         <input ng-keyup="$event.keyCode == 13 && showListController.createItem()" ng-model="showListController.newListItem.name" required type="text" placeholder="Press enter to add item"/>
         <!-- <input on-press-enter="showListController.createItem()" ng-model="showListController.newItem.name" requuired type="text" placeholder="Press enter to add item"/> -->
       </div>
@@ -45,8 +42,8 @@
   </div>
 </div>
 
-<div class="row text-right">
-  <a href confirm-action="showListController.deleteList(showListController.list)"  confirm-dialog="Are you sure you want to delete this beatiful list ?">
+<div class="bottom-actions text-right">
+  <a href="#" confirm-action="showListController.deleteList(showListController.list)"  confirm-dialog="Are you sure you want to delete this beatiful list ?">
     <i class="action-icon fa fa-trash-o"></i>
   </a>
 </div>
