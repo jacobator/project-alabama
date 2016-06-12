@@ -9,7 +9,7 @@
     // TODO: formatting issue - look here - https://github.com/jacobator/project-alabama/blob/master/app/assets/javascripts/factories/listItemFactory.js
   	function listItemFactory($resource) {
       // TODO: try witout @list_id
-      return $resource('/api/v1/lists/:list_id/list_items', {list_id: '@list_id'}, {'update': { method:'PUT' }});
+      return $resource('/api/v1/lists/:list_id/list_items/:id', {id: '@id', list_id: '@list_id'}, {'update': { method:'PUT' }});
   	}
 
 })();

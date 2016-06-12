@@ -1,5 +1,5 @@
 class Api::V1::ListItemsController < Api::V1::BaseController
-  before_action :set_item, only: [:show, :update, :destroy]
+  before_action :set_list_item, only: [:show, :update, :destroy]
 
   # GET /items
   # GET /items.json
@@ -38,6 +38,7 @@ class Api::V1::ListItemsController < Api::V1::BaseController
   # PATCH/PUT /list_items/1
   # PATCH/PUT /list_items/1.json
   def update
+    
     @list_item = ListItem.find(params[:id])
 
     if @list_item.update(list_item_params)
