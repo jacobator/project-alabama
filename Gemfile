@@ -46,6 +46,7 @@ group :development do
   gem 'capistrano-puma'
 end
 
+
 gem 'rails-assets-angular', '1.5.5'
 gem 'rails-assets-ng-resource'
 gem 'rails-assets-angular-route'
@@ -55,6 +56,6 @@ gem 'rails-assets-font-awesome'
 gem 'rails-assets-angular-material'
 gem 'autoprefixer-rails'
 
-# gem 'rails_12factor', group: :production # for herokue
+gem 'rails_12factor', group: :production # for herokue
 
 ruby "2.3.1"
